@@ -27,7 +27,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: mosazhaw/devopsazure:latest
+          tags: alessiopugliese/devopsazure:latest
+
 
   deploy:
     permissions:
