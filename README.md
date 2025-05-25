@@ -210,7 +210,6 @@ Im Azure-Portal war die App unter „App Services“ sichtbar und korrekt verlin
 
 ---
 
-## 🔧 Praktische Umsetzung – Teil 2/3  
 ### 🐳 Azure Deployment via Docker Image
 
 ---
@@ -422,8 +421,8 @@ Der Status war live im Reiter „Actions“ sichtbar.
 
 ### 🌐 Azure App über GitHub Actions live geschaltet
 
-Die Anwendung wurde erfolgreich über den GitHub-Workflow deployed.  
-Ein manuelles Eingreifen war nicht mehr nötig.
+Die Anwendung wurde leider nicht erfolgreich über den GitHub-Workflow deployed.  
+Ein manuelles Eingreifen war nicht erfolgreich.
 
 <img src="images/Bild37.png" width="600">
 
