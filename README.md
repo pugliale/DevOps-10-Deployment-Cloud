@@ -168,8 +168,8 @@ jobs:
 
 Zuerst wurde ein neues Projekt angelegt und die Azure CLI installiert. Nach erfolgreichem Login über `az login` wurde die eigene Subscription geprüft.
 
-<img src="Images/Bild1.png" width="600">
-<img src="Images/Bild2.png" width="600">
+<img src="images/Bild1.png" width="600">
+<img src="images/Bild2.png" width="600">
 
 ---
 
@@ -183,8 +183,8 @@ Die Subscription wurde auf „Azure for Students“ aktualisiert, und danach fun
 az group create --name devops-rg --location switzerlandnorth
 ```
 
-<img src="Images/Bild3.png" width="600">
-<img src="Images/Bild4.png" width="600">
+<img src="images/Bild3.png" width="600">
+<img src="images/Bild4.png" width="600">
 
 ---
 
@@ -197,8 +197,8 @@ az webapp up --name devops-alessio \
   --resource-group devops-rg --runtime NODE:18-lts --sku F1
 ```
 
-<img src="Images/Bild5.png" width="600">
-<img src="Images/Bild6.png" width="600">
+<img src="images/Bild5.png" width="600">
+<img src="images/Bild6.png" width="600">
 
 ---
 
@@ -206,7 +206,7 @@ az webapp up --name devops-alessio \
 
 Im Azure-Portal war die App unter „App Services“ sichtbar und korrekt verlinkt.
 
-<img src="Images/Bild7.png" width="600">
+<img src="images/Bild7.png" width="600">
 
 ---
 
@@ -235,8 +235,8 @@ Anschliessend wurde das Image gebaut:
 docker build -t devopscloudapp .
 ```
 
-<img src="Images/Bild8.png" width="600">
-<img src="Images/Bild9.png" width="600">
+<img src="images/Bild8.png" width="600">
+<img src="images/Bild9.png" width="600">
 
 ---
 
@@ -248,8 +248,8 @@ Die Anwendung wurde lokal im Container gestartet und über `localhost:3000` gete
 docker run -p 3000:3000 devopscloudapp
 ```
 
-<img src="Images/Bild10.png" width="600">
-<img src="Images/Bild11.png" width="600">
+<img src="images/Bild10.png" width="600">
+<img src="images/Bild11.png" width="600">
 
 ---
 
@@ -268,10 +268,10 @@ docker tag devopscloudapp pugliale/devopscloudapp
 docker push pugliale/devopscloudapp
 ```
 
-<img src="Images/Bild12.png" width="600">
-<img src="Images/Bild13.png" width="600">
-<img src="Images/Bild14.png" width="600">
-<img src="Images/Bild15.png" width="600">
+<img src="images/Bild12.png" width="600">
+<img src="images/Bild13.png" width="600">
+<img src="images/Bild14.png" width="600">
+<img src="images/Bild15.png" width="600">
 
 ---
 
@@ -293,8 +293,8 @@ az webapp create --resource-group devops-container \
   --deployment-container-image-name pugliale/devopscloudapp
 ```
 
-<img src="Images/Bild16.png" width="600">
-<img src="Images/Bild17.png" width="600">
+<img src="images/Bild16.png" width="600">
+<img src="images/Bild17.png" width="600">
 
 ---
 
@@ -303,8 +303,8 @@ az webapp create --resource-group devops-container \
 Die App wurde über Docker Container auf Azure ausgerollt.  
 Einige Minuten nach Bereitstellung war die Seite aktiv und unter der Azure-URL erreichbar.
 
-<img src="Images/Bild18.png" width="600">
-<img src="Images/Bild19.png" width="600">
+<img src="images/Bild18.png" width="600">
+<img src="images/Bild19.png" width="600">
 
 ---
 
@@ -314,9 +314,9 @@ Einige Minuten nach Bereitstellung war die Seite aktiv und unter der Azure-URL e
 - Logs analysiert
 - Umgebungsvariablen geprüft
 
-<img src="Images/Bild20.png" width="600">
-<img src="Images/Bild21.png" width="600">
-<img src="Images/Bild22.png" width="600">
+<img src="images/Bild20.png" width="600">
+<img src="images/Bild21.png" width="600">
+<img src="images/Bild22.png" width="600">
 
 ---
 
@@ -324,8 +324,8 @@ Einige Minuten nach Bereitstellung war die Seite aktiv und unter der Azure-URL e
 
 Als Fehlertest wurde der `EXPOSE 3000`-Eintrag entfernt → das Deployment schlug daraufhin fehl. Dies bestätigte die Notwendigkeit der Portangabe.
 
-<img src="Images/Bild23.png" width="600">
-<img src="Images/Bild24.png" width="600">
+<img src="images/Bild23.png" width="600">
+<img src="images/Bild24.png" width="600">
 
 ---
 
@@ -333,11 +333,11 @@ Als Fehlertest wurde der `EXPOSE 3000`-Eintrag entfernt → das Deployment schlu
 
 Nach Korrektur und neuem Docker Push wurde das Image in Azure automatisch neu gezogen und die App war wieder erreichbar.
 
-<img src="Images/Bild25.png" width="600">
-<img src="Images/Bild26.png" width="600">
-<img src="Images/Bild27.png" width="600">
-<img src="Images/Bild28.png" width="600">
-<img src="Images/Bild29.png" width="600">
+<img src="images/Bild25.png" width="600">
+<img src="images/Bild26.png" width="600">
+<img src="images/Bild27.png" width="600">
+<img src="images/Bild28.png" width="600">
+<img src="images/Bild29.png" width="600">
 
 ### 🔁 GitHub Actions für automatisiertes Deployment
 
@@ -354,7 +354,7 @@ Die Anwendung sollte nach jedem Commit auf `release` automatisch in Azure deploy
 Im Azure-Portal wurde das **Publish-Profil** der Web-App heruntergeladen.  
 Es enthält alle notwendigen Zugangsdaten zum Deployment.
 
-<img src="Images/Bild30.png" width="600">
+<img src="images/Bild30.png" width="600">
 
 ---
 
@@ -362,8 +362,8 @@ Es enthält alle notwendigen Zugangsdaten zum Deployment.
 
 Das Publish-Profil wurde in GitHub unter **Settings → Secrets → Actions** als neues Secret `AZURE_WEBAPP_PUBLISH_PROFILE` gespeichert.
 
-<img src="Images/Bild31.png" width="600">
-<img src="Images/Bild32.png" width="600">
+<img src="images/Bild31.png" width="600">
+<img src="images/Bild32.png" width="600">
 
 ---
 
@@ -405,8 +405,8 @@ jobs:
           package: .
 ```
 
-<img src="Images/Bild33.png" width="600">
-<img src="Images/Bild34.png" width="600">
+<img src="images/Bild33.png" width="600">
+<img src="images/Bild34.png" width="600">
 
 ---
 
@@ -415,8 +415,8 @@ jobs:
 Nach dem Push wurde automatisch ein Deployment ausgelöst.  
 Der Status war live im Reiter „Actions“ sichtbar.
 
-<img src="Images/Bild35.png" width="600">
-<img src="Images/Bild36.png" width="600">
+<img src="images/Bild35.png" width="600">
+<img src="images/Bild36.png" width="600">
 
 ---
 
@@ -425,7 +425,7 @@ Der Status war live im Reiter „Actions“ sichtbar.
 Die Anwendung wurde erfolgreich über den GitHub-Workflow deployed.  
 Ein manuelles Eingreifen war nicht mehr nötig.
 
-<img src="Images/Bild37.png" width="600">
+<img src="images/Bild37.png" width="600">
 
 ## 🧠 Erkenntnisse & Fazit
 
